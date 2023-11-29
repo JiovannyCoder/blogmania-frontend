@@ -1,24 +1,12 @@
 
 export default function Home() {
   return (
-    <div className="p-5">
-      <h1 className="text-primary">Home page</h1>
-      <h1>Heading 1</h1>
-      <h2>Heading 2</h2>
-      <h3>Heading 3</h3>
-      <h4>Heading 4</h4>
-      <h5>Heading 5</h5>
-      <h6>Heading 6</h6>
-      <button className="btn-primary btn-lg mr-3">Click me</button>
-      <button className="btn-outline-primary mr-3">Click me</button>
-      <button className="btn-text-primary">Click me</button>
-      <input type="text" />
-      <div className="alert-success">Success message</div>
-      <div className="alert-error">Success message</div>
-      <div className="alert-info">Success message</div>
-
+    <div>
       <div className="card">
-        card content
+        <h2>Card title</h2>
+        <p className="text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, velit sunt. Illo, voluptatibus rerum optio iure aspernatur pariatur sint non tempore vitae dignissimos explicabo ex reprehenderit totam voluptatum quidem? Non.</p>
+        <a className="btn-primary mr-3">Comment</a>
+        <a className="btn-text-primary mt-3">Read more</a>
       </div>
     </div>
   )
