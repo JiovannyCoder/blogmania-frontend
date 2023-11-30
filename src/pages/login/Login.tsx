@@ -6,11 +6,11 @@ export default function Login() {
       <h1 className="text-primary text-center">Log in</h1>
       <form className="w-full">
         <div>
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">Email <span className="text-red-500">*</span></label>
           <input type="email" id="email" />
         </div>
         <div>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Password <span className="text-red-500">*</span></label>
           <input type="password" id="password" />
         </div>
         <div className="mt-4">

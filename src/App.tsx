@@ -8,6 +8,7 @@ import Profil from './pages/profil/Profil';
 
 // components
 import Navbar from './components/Navbar';
+import PostDetails from './pages/home/PostDetails';
 
 
 function App() {
@@ -19,6 +20,10 @@ function App() {
           <Route
             path="/"
             element={<Home />}
+          />
+          <Route
+            path="/post/:id"
+            element={<PostDetails />}
           />
           <Route
             path="/login"
