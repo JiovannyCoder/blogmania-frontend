@@ -1,8 +1,11 @@
 import { Link, useParams } from "react-router-dom"
 import CommentCard from "../../components/CommentCard"
+import useAuthContext from "../../hooks/useAuthContext"
 
 export default function PostDetails() {
     const { id } = useParams()
+
+    const { user } = useAuthContext()
 
     return (
         <div>
@@ -21,11 +24,13 @@ export default function PostDetails() {
                 <CommentCard />
                 <CommentCard />
             </div>
-            <div className="">
-                <h3 className="text-gray-500">Let a comment ?</h3>
-                <textarea rows={3}></textarea>
-                <button className="btn-primary">Comment the post</button>
-            </div>
+            {user && (
+                <div>
+                    <h3 className="text-gray-500">Let a comment ?</h3>
+                    <textarea rows={3}></textarea>
+                    <button className="btn-primary">Comment the post</button>
+                </div>
+            )}
             <div className="mt-8">
                 <Link to="/" className="link-primary">{'<-'} Return to all posts</Link>
             </div>
