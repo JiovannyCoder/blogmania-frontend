@@ -1,9 +1,9 @@
 import { createContext, useReducer } from 'react'
 
-// auth context
+// user post context
 export const UserPostContext = createContext({} as UserPostContextType)
 
-// auth reducer function
+// user post reducer function
 const UserPostReducer = (state: UserPostState, action: UserPostAction) => {
     switch (action.type) {
         case "SET_POSTS":
@@ -18,7 +18,7 @@ const UserPostReducer = (state: UserPostState, action: UserPostAction) => {
     }
 }
 
-// auth provider
+// user post provider
 export function UserPostContextProvider({ children }: UserPostProviderProps) {
     const [state, dispatch] = useReducer(UserPostReducer, {
         posts: null

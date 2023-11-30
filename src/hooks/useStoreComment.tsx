@@ -34,9 +34,7 @@ export default function useStoreComment(id : string) {
             if (response.ok) {
                 // retrieve the post
                 const json : PostComment = await response.json()
-                // refrech the page
-                
-                
+                // return it
                 return json
             }
 
