@@ -1,16 +1,20 @@
 import { Link } from "react-router-dom";
+import DateFromNow from "../utils/formatDate";
 
+type props = {
+  post: Post
+}
 
-export default function PostCard() {
+export default function PostCard({ post }: props) {
   return (
     <div className="card mb-5">
-        <h3 className="text-primary">Post title Lorem ipsum dolor sit</h3>
-        <h5>Published by John Doe - <span className="date-title">11/06/02</span></h5>
-        <p className="text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, velit sunt. Illo, voluptatibus rerum optio iure aspernatur pariatur sint non tempore vitae dignissimos explicabo ex reprehenderit totam voluptatum quidem? Non.</p>
-        <div className="flex justify-between">
-        <Link to="/post/156166" className="btn-outline-primary mt-3 mr-3">Details</Link>
-        <span className="btn-text-primary mt-3">Comments</span>
-        </div>
+      <h3 className="text-primary">{ post.title }</h3>
+      <h5>Published by { post.user.firstname + ' ' + post.user.lastname } - <span className="date-title">{DateFromNow(post.createdAt)}</span></h5>
+      <p className="text-gray-700">{ post.body }</p>
+      <div className="flex justify-between">
+        <Link to={"/post/" + post._id } className="btn-outline-primary mt-3 mr-3">Details</Link>
+        <span className="btn-text-primary mt-3">{ post.comments.length ? post.comments.length : 'No' } Comment{post.comments.length > 1 ? 's' : ''}</span>
+      </div>
     </div>
   )
 }
