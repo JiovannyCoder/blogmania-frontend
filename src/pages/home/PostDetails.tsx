@@ -3,11 +3,12 @@ import CommentCard from "../../components/CommentCard"
 import useAuthContext from "../../hooks/useAuthContext"
 import usePostDetails from "../../hooks/usePostDetails"
 import DateFromNow from "../../utils/formatDate"
+import CommentForm from "./CommentForm"
 
 export default function PostDetails() {
     const { id } = useParams()
     const { user } = useAuthContext()
-    const { post, isLoading, error } = usePostDetails(id as string)
+    const { post, isLoading, error, mutatePost } = usePostDetails(id as string)
 
     if (isLoading) return <p>Loading post details ...</p>
 
@@ -31,13 +32,8 @@ export default function PostDetails() {
                 </div>
             )}
 
-            {user && (
-                <div>
-                    <h3 className="text-gray-500">Let a comment ?</h3>
-                    <textarea rows={3}></textarea>
-                    <button className="btn-primary">Comment the post</button>
-                </div>
-            )}
+            {user && <CommentForm post={post} mutatePost={mutatePost} />}
+
             <div className="mt-8">
                 <Link to="/" className="link-primary">{'<-'} Return to all posts</Link>
             </div>

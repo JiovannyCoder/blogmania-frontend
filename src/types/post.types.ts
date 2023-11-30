@@ -16,17 +16,7 @@ type PostDetails = {
     _id: string,
     title: string,
     body: string,
-    comments: [
-        {
-            content: string,
-            user: {
-                _id: string,
-                firstname: string,
-                lastname: string
-            },
-            createdAt: string
-        }
-    ],
+    comments: PostComment [],
     user: {
         _id: string,
         firstname: string,

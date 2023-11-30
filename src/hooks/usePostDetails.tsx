@@ -39,5 +39,5 @@ export default function usePostDetails(id : string) {
         fetchPostDetails()
     }, [])
 
-    return { post, isLoading, error }
+    return { post, isLoading, error, mutatePost: setPost }
 }
